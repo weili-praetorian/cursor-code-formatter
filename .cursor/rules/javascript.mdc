@@ -1,6 +1,7 @@
 ---
 description: Best practices for JavaScript development in this project, focusing on code quality, consistency, and modern ES6+ patterns
 globs: **/*.js
+alwaysApply: true
 ---
 
 # JavaScript Best Practices
