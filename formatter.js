@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { normalizeIndentation, normalizeQuotes, addSemicolons } = require('./utils');
 
 /**
  * Simple JavaScript code formatter
@@ -9,31 +10,12 @@ const path = require('path');
  */
 
 function formatCode(code) {
-  // Replace double quotes with single quotes
-  let formatted = code.replace(/"/g, "'");
+  // Use utility functions for formatting
+  let formatted = normalizeQuotes(code, 'single');
+  formatted = addSemicolons(formatted);
+  formatted = normalizeIndentation(formatted, 2);
 
-  // Ensure semicolons at end of statements
-  formatted = formatted.replace(/([^;{}\s])\s*\n/g, '$1;\n');
-
-  // Normalize indentation to 2 spaces
-  const lines = formatted.split('\n');
-  let indentLevel = 0;
-  const formattedLines = lines.map(line => {
-    const trimmed = line.trim();
-
-    if (trimmed.endsWith('{')) {
-      const result = '  '.repeat(indentLevel) + trimmed;
-      indentLevel++;
-      return result;
-    } else if (trimmed.startsWith('}')) {
-      indentLevel = Math.max(0, indentLevel - 1);
-      return '  '.repeat(indentLevel) + trimmed;
-    } else {
-      return '  '.repeat(indentLevel) + trimmed;
-    }
-  });
-
-  return formattedLines.join('\n');
+  return formatted;
 }
 
 function main() {
