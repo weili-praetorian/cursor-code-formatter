@@ -1,0 +1,24 @@
+{
+  "name": "simple-code-formatter",
+  "version": "1.0.0",
+  "description": "A lightweight JavaScript code formatter for consistent code style",
+  "main": "formatter.js",
+  "bin": {
+    "format-code": "./formatter.js"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "format": "node formatter.js"
+  },
+  "keywords": [
+    "formatter",
+    "code-style",
+    "javascript",
+    "linter"
+  ],
+  "author": "Development Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
