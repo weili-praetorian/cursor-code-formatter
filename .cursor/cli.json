@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Shell(**)"
+      "Shell(**)",
+      "Write(**)"
     ],
     "deny": []
   }
